@@ -150,6 +150,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 .doc .av{flex:none;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff;background:linear-gradient(140deg,var(--mint),var(--brand));box-shadow:0 0 0 5px var(--tint)}
 .doc b{display:block;font-size:17px;line-height:1.3}
 .doc span{color:var(--muted);font-size:14px}
+.doc-ph{flex-direction:column;align-items:stretch;padding:0;overflow:hidden;gap:0}
+.doc-ph .pic{aspect-ratio:1;overflow:hidden;background:var(--tint)}
+.doc-ph .pic img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:.6s}
+.doc-ph:hover .pic img{transform:scale(1.05)}
+.doc-ph .t{padding:20px 22px 22px;display:grid;gap:4px}
+.doc-ph .btn{margin-top:12px;padding:11px 18px;font-size:14px;justify-self:start}
 
 /* prices */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 18px}
@@ -532,9 +538,12 @@ const cmp = $('#cmp'); $('#cmpr').addEventListener('input', e => cmp.style.setPr
 if (!RM) { let t = 0; const auto = setInterval(() => { t += .05; const v = 50 + Math.sin(t)*22; cmp.style.setProperty('--pos', v + '%'); $('#cmpr').value = v; }, 30);
   ['pointerdown','touchstart'].forEach(ev => cmp.addEventListener(ev, () => clearInterval(auto), {once:true})); setTimeout(() => clearInterval(auto), 6000); }
 
+const modal = document.getElementById('modal');
 /* doctors */
 const ini = n => n.split(/\s+/).slice(0,2).reverse().map(w => w[0]).join('');
-$('#docs').innerHTML = (S.doctors || []).map((d,i) => `<div class="doc rv d${i%3}"><div class="av">${ini(d.name)}</div><div><b>${d.name}</b><span>${d.role}</span></div></div>`).join('');
+$('#docs').innerHTML = (S.doctors || []).map((d,i) => d.photo
+  ? `<div class="doc doc-ph rv d${i%3}"><div class="pic"><img src="${d.photo}" alt="${d.name}" loading="lazy"></div><div class="t"><b>${d.name}</b><span>${d.role}</span><button class="btn btn-ghost" data-open>Записаться</button></div></div>`
+  : `<div class="doc rv d${i%3}"><div class="av">${ini(d.name)}</div><div><b>${d.name}</b><span>${d.role}</span></div></div>`).join('');
 $$('#docs .rv').forEach(el => io.observe(el));
 
 /* reviews slider */
@@ -569,7 +578,6 @@ function go(i){
 $('#qback').onclick = () => go(cur-1); go(0);
 
 /* modal / menu */
-const modal = $('#modal');
 $$('[data-open]').forEach(b => b.onclick = () => { modal.classList.add('open'); modal.querySelector('input').focus(); });
 modal.onclick = e => { if (e.target === modal || e.target.classList.contains('x')) modal.classList.remove('open'); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
