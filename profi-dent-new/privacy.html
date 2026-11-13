@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--ink:#0f1f2b;--muted:#5b6b78;--bg:#fff;--line:#e3ecea;--brand:#0e9f8e;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8f1f0;--muted:#97a9b4;--bg:#0b161e;--line:#1f3846;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#e8f1f0;--muted:#97a9b4;--bg:#0b161e;--line:#1f3846;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px}
+main{max-width:820px;margin:0 auto;padding:40px 16px 80px}
+a{color:var(--brand)}
+h1{font-size:clamp(28px,4vw,38px);line-height:1.2}
+h2{font-size:20px;margin-top:32px}
+p,li{color:var(--muted)}
+.back{display:inline-block;margin-bottom:24px;font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="index.html">← На главную</a>
+<h1>Политика в отношении обработки персональных данных</h1>
+<p>Редакция от <span id="d"></span></p>
+
+<h2>1. Общие положения</h2>
+<p>Настоящая политика составлена в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению их безопасности, предпринимаемые <b class="c-company"></b> (ИНН <span class="c-inn"></span>), далее — Оператор.</p>
+
+<h2>2. Какие данные мы обрабатываем</h2>
+<ul><li>имя;</li><li>номер телефона;</li><li>сведения о желаемой услуге, указанные в форме;</li><li>обезличенные данные о посещениях сайта (cookie, данные сервисов веб-аналитики).</li></ul>
+
+<h2>3. Цели обработки</h2>
+<ul><li>запись на приём и обратная связь с пользователем;</li><li>информирование об услугах клиники;</li><li>улучшение работы сайта.</li></ul>
+
+<h2>4. Правовые основания</h2>
+<p>Оператор обрабатывает персональные данные только при их заполнении и отправке пользователем через формы на сайте. Отправляя форму, пользователь выражает согласие с настоящей политикой.</p>
+
+<h2>5. Порядок обработки и хранения</h2>
+<p>Оператор обеспечивает сохранность данных и принимает все возможные меры, исключающие доступ к ним неуполномоченных лиц. Данные не передаются третьим лицам, за исключением случаев, предусмотренных законодательством РФ. Срок обработки — до достижения целей обработки или до отзыва согласия.</p>
+
+<h2>6. Права пользователя</h2>
+<p>Пользователь может получить информацию об обработке своих данных, потребовать их уточнения или удаления, а также отозвать согласие, направив письмо на <a class="c-email"></a> с пометкой «Отзыв согласия на обработку персональных данных».</p>
+
+<h2>7. Cookie</h2>
+<p>Сайт использует файлы cookie и сервисы веб-аналитики для корректной работы и статистики. Пользователь может отключить cookie в настройках браузера.</p>
+
+<h2>8. Контакты оператора</h2>
+<p><span class="c-company"></span><br><span class="c-address"></span><br>Телефон: <span class="c-phone"></span><br>Email: <a class="c-email"></a></p>
+</main>
+<script>
+var S=window.SITE||{};
+['company','inn','address','phone','email'].forEach(function(k){document.querySelectorAll('.c-'+k).forEach(function(el){el.textContent=S[k]||'';if(k==='email')el.href='mailto:'+S.email})});
+document.getElementById('d').textContent=new Date().toLocaleDateString('ru-RU');
+document.title='Политика конфиденциальности — '+(S.name||'');
+</script>
+</body>
+</html>
