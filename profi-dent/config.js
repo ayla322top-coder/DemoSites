@@ -18,7 +18,7 @@ window.SITE = {
   mapUrl: "https://yandex.ru/maps/?text=%D0%B3.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%9F%D0%BE%D1%81%D0%B0%D0%B4%2C%20%D1%83%D0%BB.%20%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%202",
 
   // Цвета бренда
-  colors: {"brand": "#0e9f8e", "brandDark": "#0a7a6d", "accent": "#ffb547"},
+  colors: {"brand": "#0a8fa0", "brandDark": "#076f7c", "accent": "#7cf3ff"},
 
   // Приём заявок: Telegram-бот и/или свой endpoint (Formspree и т.п.)
   telegramToken: "",
