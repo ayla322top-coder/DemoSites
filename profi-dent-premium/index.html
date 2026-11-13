@@ -10,7 +10,7 @@
 <meta property="og:description" content="Лечение, имплантация, виниры. г. Павловский Посад, ул. Свердлова, д. 2. Запись: +7 (49643) 5-15-08. Калькулятор стоимости лечения онлайн.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="config.js"></script>
+<script src="config.js?v=7f4930ec"></script>
 <style>
 :root{
   --brand:#14b8c8; --brand-d:#0b8a99; --accent:#7cf3ff;
@@ -422,7 +422,7 @@ footer a{text-decoration:underline}
   <div class="wrap">
     <div class="label mono">Команда</div>
     <h2 class="rv">Врачи-исследователи, а не продавцы услуг</h2>
-    <div class="docs">
+    <div class="docs" id="docs">
       <div class="doc rv"><div class="ph">АС</div><b>Анна Смирнова</b><span>Главный врач, ортопед · 18 лет</span></div>
       <div class="doc rv d1"><div class="ph">ИК</div><b>Игорь Ковалёв</b><span>Хирург-имплантолог · 15 лет</span></div>
       <div class="doc rv d2"><div class="ph">МВ</div><b>Мария Волкова</b><span>Эндодонтист · 11 лет</span></div>
@@ -655,6 +655,11 @@ function toothCloud(){
   $('#playbtn').onclick = play;
 })();
 
+/* doctors from config */
+if (Array.isArray(S.doctors) && S.doctors.length) {
+  const ini = n => n.split(/\s+/).slice(0,2).map(w => w[0]).join('');
+  $('#docs').innerHTML = S.doctors.map((d,i) => `<div class="doc rv in d${i%4}"><div class="ph">${ini(d.name)}</div><b>${d.name}</b><span>${d.role}</span></div>`).join('');
+}
 /* before / after */
 const cmp = $('#cmp'); $('#cmpr').addEventListener('input', e => cmp.style.setProperty('--pos', e.target.value + '%'));
 
