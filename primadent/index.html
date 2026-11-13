@@ -59,6 +59,7 @@ section{padding:90px 0}
 header{position:sticky;top:0;z-index:50;background:var(--hdr);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo svg{height:46px;width:auto}
 .logo i{width:38px;height:38px;border-radius:12px;background:var(--brand);display:grid;place-items:center;color:#fff;font-style:normal}
 .menu{display:flex;gap:28px;font-weight:600;font-size:15px}
 .menu a:hover{color:var(--brand)}
@@ -484,6 +485,7 @@ if (S.colors) { const r = document.documentElement.style;
   S.colors.brand && r.setProperty('--brand', S.colors.brand);
   S.colors.brandDark && r.setProperty('--brand-d', S.colors.brandDark);
   S.colors.accent && r.setProperty('--accent', S.colors.accent); }
+if (S.logoSvg) $$('.logo').forEach(l => { l.innerHTML = S.logoSvg; l.setAttribute('aria-label', S.name); });
 if (S.demoFor) { const d=$('#demobar'); d.textContent='Демо-версия сайта, подготовлена для клиники «'+S.demoFor+'». Врачи, отзывы и цены — примеры.'; d.style.display='block'; }
 $('#y').textContent = new Date().getFullYear();
 

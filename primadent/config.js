@@ -4,6 +4,7 @@
    ========================================================= */
 window.SITE = {
   demoFor: "Примадент",
+  logoSvg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 250 56\" height=\"46\"><defs><linearGradient id=\"pg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b5d334\"/><stop offset=\"1\" stop-color=\"#3f8f2a\"/></linearGradient></defs><g transform=\"translate(14 2) scale(.125)\"><path d=\"M200 150c-36-26-104-24-114 38-8 48 14 86 24 132 8 42 15 104 43 104 24 0 23-76 47-76s23 76 47 76c28 0 35-62 43-104 10-46 32-84 24-132-10-62-78-64-114-38z\" fill=\"#a3a3a3\"/></g><g transform=\"translate(-6 -2) scale(.13)\"><path d=\"M200 150c-36-26-104-24-114 38-8 48 14 86 24 132 8 42 15 104 43 104 24 0 23-76 47-76s23 76 47 76c28 0 35-62 43-104 10-46 32-84 24-132-10-62-78-64-114-38z\" fill=\"url(#pg)\"/><path d=\"M150 200c10-30 40-34 55-20M215 240c-10 30-25 60-15 110\" stroke=\"#fff\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\" opacity=\".85\"/></g><text x=\"66\" y=\"32\" font-family=\"Manrope,Arial,sans-serif\" font-weight=\"800\" font-size=\"25\" fill=\"#5aa52a\" letter-spacing=\".5\">ПРИМАДЕНТ</text><text x=\"67\" y=\"47\" font-family=\"Manrope,Arial,sans-serif\" font-size=\"10.5\" fill=\"#8a8a8a\" letter-spacing=\".6\">стоматологическая клиника</text></svg>",
   name: "Примадент",
   city: "Павловский Посад",
   address: "г. Павловский Посад, ул. Свердлова, д. 14",
@@ -18,7 +19,7 @@ window.SITE = {
   mapUrl: "https://yandex.ru/maps/?text=%D0%B3.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%9F%D0%BE%D1%81%D0%B0%D0%B4%2C%20%D1%83%D0%BB.%20%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%2014",
 
   // Цвета бренда
-  colors: {"brand": "#2f6fdf", "brandDark": "#1f54b3", "accent": "#ffc24b"},
+  colors: {"brand": "#4f9a24", "brandDark": "#3b7a19", "accent": "#ffb547"},
 
   // Приём заявок: Telegram-бот и/или свой endpoint (Formspree и т.п.)
   telegramToken: "",
